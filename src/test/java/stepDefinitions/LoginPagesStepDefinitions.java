@@ -23,8 +23,23 @@ public class LoginPagesStepDefinitions {
     }
 
     @Then("Check {string} message abouth username")
-    public void checkMessageAbouthUsername(String arg0) {
+    public void checkMessageAbouthUsername(String username) {
+        loginPage.checkMessage(username);
     }
 
 
+    @When("write {string} for username field")
+    public void writeForUsernameField(String username2) {
+        loginPage.writeUserNameForUsernameField(username2);
+    }
+
+    @Then("Check {string} message abouth password")
+    public void checkMessageAbouthPassword(String error) {
+        loginPage.checkMessage(error);
+    }
+
+    @When("write {string} for password field")
+    public void writeForPasswordField(String password) {
+        loginPage.writePasswordForPasswordField(password);
+    }
 }
