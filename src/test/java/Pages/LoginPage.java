@@ -66,4 +66,14 @@ public class LoginPage {
             throw new RuntimeException(e);
         }
     }
+
+    public void correctUsernameForUsernameField(String correctUsername) {
+        driver.findElement(usernamebox).click();
+        elementHelper.sendKey(usernamebox,"qaseleniummm@gmail.com");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

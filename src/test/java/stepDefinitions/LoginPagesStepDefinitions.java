@@ -44,7 +44,8 @@ public class LoginPagesStepDefinitions {
     }
 
     @When("write Correct {string} for username field")
-    public void writeCorrectForUsernameField(String arg0) {
+    public void writeCorrectForUsernameField(String correctUsername) {
+        loginPage.correctUsernameForUsernameField(correctUsername);
     }
 
     @When("write False {string} for password field")
