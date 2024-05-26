@@ -76,4 +76,23 @@ public class LoginPage {
             throw new RuntimeException(e);
         }
     }
+
+    public void falsePasswordForPasswordField(String falsePassword) {
+        driver.findElement(passwordbox).click();
+        elementHelper.sendKey(passwordbox,"abc1234");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void dontMatchErrorMessage(String dontMatch) {
+        elementHelper.checkVisible(errorMessage);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

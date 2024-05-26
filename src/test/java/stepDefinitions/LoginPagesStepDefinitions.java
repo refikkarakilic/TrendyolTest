@@ -49,10 +49,12 @@ public class LoginPagesStepDefinitions {
     }
 
     @When("write False {string} for password field")
-    public void writeFalseForPasswordField(String arg0) {
+    public void writeFalseForPasswordField(String falsePassword) {
+        loginPage.falsePasswordForPasswordField(falsePassword);
     }
 
     @Then("Check {string} message abouth don't match")
-    public void checkMessageAbouthDonTMatch(String arg0) {
+    public void checkMessageAbouthDonTMatch(String dontMatch) {
+        loginPage.dontMatchErrorMessage(dontMatch);
     }
 }
