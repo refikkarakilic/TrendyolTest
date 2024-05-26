@@ -29,3 +29,19 @@ Scenario Outline: Empty Username & Empty Pasword
       Examples:
         |password|errors                                      |
         |123456   |Lütfen geçerli bir e-posta adresi giriniz. |
+    @FalseLogin
+    Scenario Outline: Correct Username & False Password
+      Given User at home page
+      When write Correct "cusername»" for username field
+      When write False "«password»" for password field
+      When click login button
+      Then Check "‹error›" message abouth don't match
+      Examples:
+      |username                      |error                                         |password|
+      |qaseleniummm@gmail.com        |E-posta adresiniz ve/veya şifreniz hatalı     |abc1234 |
+
+
+
+
+
+
